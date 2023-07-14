@@ -9,7 +9,8 @@
     "lint": "next lint",
     "test": "npx jest --passWithNoTests",
     "test:dev": "npx jest --watchAll --passWithNoTests",
-    "test:coverage": "npx jest --coverage --watchAll=false --passWithNoTests"
+    "test:coverage": "npx jest --coverage --watchAll=false --passWithNoTests",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "20.4.2",
@@ -24,6 +25,9 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "jest": "^29.6.1"
+    "jest": "^29.6.1",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.0",
+    "husky": "^8.0.0"
   }
 }
