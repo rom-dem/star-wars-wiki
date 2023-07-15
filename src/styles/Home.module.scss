@@ -1,0 +1,10 @@
+$padding: 1rem;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: $padding;
+  min-height: 100vh;
+}
