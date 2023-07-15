@@ -1,4 +1,4 @@
-import apiClient from "@/api/apiClient/apiClient";
+import apiClient from "../api/apiClient/apiClient";
 
 interface UseGetItemsStructure {
   getItems: () => {};
