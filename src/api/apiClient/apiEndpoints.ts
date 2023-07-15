@@ -8,3 +8,5 @@ export const apiEndpoints: ApiEndpointsStructure = {
   vehicles: "/vehicles",
   starships: "/starships",
 };
+
+export const apiUrl = process.env.NEXT_PUBLIC_API_URL;
