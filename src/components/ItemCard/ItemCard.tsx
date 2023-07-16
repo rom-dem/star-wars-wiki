@@ -10,7 +10,7 @@ const ItemCard = ({ item: { name } }: ItemCardProps): React.ReactElement => {
   return (
     <article className={styles["item-card"]}>
       <Image
-        src=""
+        src="/../public/characters.webp"
         alt={name}
         width={350}
         height={350}

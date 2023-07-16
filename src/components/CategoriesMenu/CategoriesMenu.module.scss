@@ -1,6 +1,9 @@
 $accentColor: #ffe81f;
 
 .menu {
+  background-color: black;
+  min-height: 100vh;
+
   &__list {
     padding: 10px;
     display: flex;
@@ -9,19 +12,22 @@ $accentColor: #ffe81f;
   }
 
   &__button {
-    width: 100px;
+    padding: 20px 15px;
+    width: 200px;
     text-align: left;
+    font-size: 2rem;
     text-transform: capitalize;
-    background-color: black;
     color: #fff;
     text-shadow:
       0 0 7px #fff,
       0 0 10px #fff,
       0 0 21px #fff,
       0 0 42px #f09;
+    border: 1px solid black;
   }
 
   &__button:active {
     border: 1px solid $accentColor;
+    color: $accentColor;
   }
 }
