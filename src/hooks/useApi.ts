@@ -1,17 +1,15 @@
-import apiClient from "../api/apiClient/apiClient";
+import { useQuery } from "react-query";
+import getItems from "@/api/getItems/getItems";
 
-interface UseGetItemsStructure {
-  getItems: () => {};
-}
+const getItemsQuery = "getItemsQuery";
 
-const useApi = (itemCategory: string): UseGetItemsStructure => {
-  const getItems = async () => {
-    const response = await apiClient.get(itemCategory);
+const useApi = (itemCategory: string) => {
+  const { data, error, isError, isLoading } = useQuery(
+    [getItemsQuery, itemCategory],
+    () => getItems(itemCategory),
+  );
 
-    return response.data;
-  };
-
-  return { getItems };
+  return { data, error, isError, isLoading };
 };
 
 export default useApi;

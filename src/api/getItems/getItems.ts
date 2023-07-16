@@ -1,9 +1,10 @@
 import apiClient from "../apiClient/apiClient";
+import { ApiData } from "../types";
 
-const getItems = async (itemCategory: string) => {
-  const items = await apiClient.get(`${itemCategory}`);
+const getItems = async (itemCategory: string): Promise<ApiData> => {
+  const { data } = await apiClient.get(itemCategory);
 
-  return items.data;
+  return data;
 };
 
 export default getItems;

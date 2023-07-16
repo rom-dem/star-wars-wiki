@@ -1,29 +1,30 @@
-import apiClient from "@/api/apiClient/apiClient";
 import { apiEndpoints } from "@/api/apiClient/apiEndpoints";
-import { mockItems } from "@/mocks/itemsMocks";
+import { mockPeopleItems } from "@/mocks/itemsMocks";
 import useApi from "./useApi";
-
-jest.mock("../api/apiClient/apiClient");
 
 const { people } = apiEndpoints;
 
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+jest.mock("react-query", () => ({
+  useQuery: jest.fn().mockReturnValue({
+    isLoading: false,
+    data: mockPeopleItems,
+    error: undefined,
+    isError: false,
+  }),
+}));
+
 describe("Given the useApi hook", () => {
-  describe("When called", () => {
-    beforeEach(() => {
-      jest.clearAllMocks();
-    });
+  describe("When the getItems function is called with the endpoint 'people'", () => {
+    test("Then it should return a list of items", async () => {
+      const expectedResponse = mockPeopleItems;
 
-    test("Then it should return a list of items in the data property", async () => {
-      const mockResponse = {
-        data: mockItems,
-      };
-      apiClient.get = jest.fn().mockResolvedValueOnce(mockResponse);
+      const { data } = useApi(people);
 
-      const { getItems } = useApi(people);
-      const itemsData = await getItems();
-
-      expect(apiClient.get).toHaveBeenCalledWith(people);
-      expect(itemsData).toEqual(mockResponse.data);
+      expect(data).toStrictEqual(expectedResponse);
     });
   });
 });

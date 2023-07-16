@@ -9,4 +9,4 @@ export const apiEndpoints: ApiEndpointsStructure = {
   starships: "/starships",
 };
 
-export const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+export const apiUrl = "https://swapi.dev/api";
