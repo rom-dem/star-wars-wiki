@@ -1,11 +1,9 @@
 import { mockPeopleItems } from "@/mocks/itemsMocks";
 import getItems from "./getItems";
-import { apiEndpoints } from "../apiClient/apiEndpoints";
-import { server } from "@/mocks/server";
-import { errorHandlers } from "@/mocks/handlers";
+import { apiCategories } from "../apiClient/apiEndpoints";
 
 describe("Given the getItems function", () => {
-  const itemCategory = apiEndpoints.people;
+  const itemCategory = apiCategories.people;
 
   describe("When it is called with 'people'", () => {
     test("Then it should ruturn a list of two people", async () => {

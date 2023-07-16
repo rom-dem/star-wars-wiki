@@ -1,0 +1,27 @@
+$accentColor: #ffe81f;
+
+.menu {
+  &__list {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__button {
+    width: 100px;
+    text-align: left;
+    text-transform: capitalize;
+    background-color: black;
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #f09;
+  }
+
+  &__button:active {
+    border: 1px solid $accentColor;
+  }
+}
