@@ -1,5 +1,6 @@
 import axios from "axios";
+import { apiUrl } from "./apiEndpoints";
 
-const apiClient = axios.create({ baseURL: process.env.NEXT_PUBLIC_API_URL });
+const apiClient = axios.create({ baseURL: apiUrl });
 
 export default apiClient;
