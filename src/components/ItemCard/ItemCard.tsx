@@ -6,9 +6,7 @@ interface ItemCardProps {
   item: ItemStructure;
 }
 
-export const ItemCard = ({
-  item: { name },
-}: ItemCardProps): React.ReactElement => {
+const ItemCard = ({ item: { name } }: ItemCardProps): React.ReactElement => {
   return (
     <article className={styles["item-card"]}>
       <Image
@@ -22,3 +20,5 @@ export const ItemCard = ({
     </article>
   );
 };
+
+export default ItemCard;

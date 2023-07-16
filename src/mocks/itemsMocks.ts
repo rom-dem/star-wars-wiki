@@ -1,6 +1,6 @@
 import { ApiData, ItemStructure } from "@/api/types";
 
-const mockLuke: ItemStructure = {
+export const mockLuke: ItemStructure = {
   name: "Luke",
   url: "www.luke.com",
 };
