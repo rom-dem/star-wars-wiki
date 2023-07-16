@@ -1,4 +1,4 @@
-export interface ApiEndpointsStructure {
+export interface ApiCategoriesStructure {
   people: string;
   planets: string;
   films: string;

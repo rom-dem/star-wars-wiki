@@ -1,12 +1,12 @@
-import { ApiEndpointsStructure } from "../types";
+import { ApiCategoriesStructure } from "../types";
 
-export const apiEndpoints: ApiEndpointsStructure = {
-  people: "/people",
-  planets: "/planets",
-  films: "/films",
-  species: "/species",
-  vehicles: "/vehicles",
-  starships: "/starships",
+export const apiCategories: ApiCategoriesStructure = {
+  people: "people",
+  planets: "planets",
+  films: "films",
+  species: "species",
+  vehicles: "vehicles",
+  starships: "starships",
 };
 
-export const apiUrl = "https://swapi.dev/api";
+export const apiUrl = "https://swapi.dev/api/";

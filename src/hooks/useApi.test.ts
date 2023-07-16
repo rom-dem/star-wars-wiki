@@ -1,8 +1,8 @@
-import { apiEndpoints } from "@/api/apiClient/apiEndpoints";
+import { apiCategories } from "@/api/apiClient/apiEndpoints";
 import { mockPeopleItems } from "@/mocks/itemsMocks";
 import useApi from "./useApi";
 
-const { people } = apiEndpoints;
+const { people } = apiCategories;
 
 beforeEach(() => {
   jest.clearAllMocks();
