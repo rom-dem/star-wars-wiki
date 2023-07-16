@@ -1,14 +1,15 @@
-import { ApiData } from "@/api/types";
-import apiClient from "../api/apiClient/apiClient";
+import { useQuery } from "react-query";
+import getItems from "@/api/getItems/getItems";
+
+const getItemsQuery = "getItemsQuery";
 
 const useApi = (itemCategory: string) => {
-  const getItemsData = async (): Promise<ApiData> => {
-    const { data } = await apiClient.get(itemCategory);
+  const { data, error, isError, isLoading } = useQuery(
+    [getItemsQuery, itemCategory],
+    () => getItems(itemCategory),
+  );
 
-    return data;
-  };
-
-  return { getItemsData };
+  return { data, error, isError, isLoading };
 };
 
 export default useApi;
