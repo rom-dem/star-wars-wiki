@@ -15,9 +15,12 @@ const mockLukeData: ApiData = {
   results: [mockLuke],
 };
 
-const mockLeiaData: ApiData = {
+export const mockLeiaData: ApiData = {
   next: "123asdf",
   results: [mockLeia],
 };
 
-export const mockPeopleItems: ApiData[] = [mockLukeData, mockLeiaData];
+export const mockPeopleItems: ApiData = {
+  next: "",
+  results: [mockLeia, mockLuke],
+};
