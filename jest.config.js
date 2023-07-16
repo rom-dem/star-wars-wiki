@@ -21,8 +21,6 @@ const customJestConfig = {
     "!next-env.d.ts",
     "!src/pages/_app.tsx",
     "!src/pages/_document.tsx",
-    "!src/styles/globals.scss",
-    "!src/styles/Home.module.scss",
   ],
   transformIgnorePatterns: ["node_modules/(?!axios)"],
 };

@@ -8,7 +8,7 @@ interface ButtonProps {
 
 const CategoriesMenu = ({ categories }: ButtonProps): React.ReactElement => {
   return (
-    <aside className="menu">
+    <aside className={styles["menu"]}>
       <ul className={styles["menu__list"]}>
         {Object.entries(categories).map((category, index) => (
           <li className="menu__item" key={index}>
