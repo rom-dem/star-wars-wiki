@@ -1,23 +1,23 @@
-import { ApiData } from "@/api/types";
+import { ApiData, ItemStructure } from "@/api/types";
 
-export const mockLuke: ApiData = {
-  next: "123asdf",
-  results: [
-    {
-      name: "Luke",
-      url: "www.luke.com",
-    },
-  ],
+const mockLuke: ItemStructure = {
+  name: "Luke",
+  url: "www.luke.com",
 };
 
-export const mockLeia: ApiData = {
-  next: "123asdf",
-  results: [
-    {
-      name: "Leia",
-      url: "www.leia.com",
-    },
-  ],
+const mockLeia: ItemStructure = {
+  name: "Leia",
+  url: "www.leia.com",
 };
 
-export const mockItems: ApiData[] = [mockLuke, mockLeia];
+const mockLukeData: ApiData = {
+  next: "123asdf",
+  results: [mockLuke],
+};
+
+const mockLeiaData: ApiData = {
+  next: "123asdf",
+  results: [mockLeia],
+};
+
+export const mockPeopleItems: ApiData[] = [mockLukeData, mockLeiaData];

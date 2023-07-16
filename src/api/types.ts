@@ -9,10 +9,10 @@ export interface ApiEndpointsStructure {
 
 export interface ApiData {
   next: string;
-  results: [
-    {
-      name: string;
-      url: string;
-    },
-  ];
+  results: [ItemStructure];
+}
+
+export interface ItemStructure {
+  name: string;
+  url: string;
 }

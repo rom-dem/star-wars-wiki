@@ -1,17 +1,14 @@
+import { ApiData } from "@/api/types";
 import apiClient from "../api/apiClient/apiClient";
 
-interface UseGetItemsStructure {
-  getItems: () => {};
-}
+const useApi = (itemCategory: string) => {
+  const getItemsData = async (): Promise<ApiData> => {
+    const { data } = await apiClient.get(itemCategory);
 
-const useApi = (itemCategory: string): UseGetItemsStructure => {
-  const getItems = async () => {
-    const response = await apiClient.get(itemCategory);
-
-    return response.data;
+    return data;
   };
 
-  return { getItems };
+  return { getItemsData };
 };
 
 export default useApi;
