@@ -5,10 +5,12 @@ import cardImage from "../../../public/characters.webp";
 
 interface ItemCardProps {
   item: ItemStructure;
+  isLazy: "lazy" | "eager";
 }
 
 const ItemCard = ({
   item: { name, title },
+  isLazy,
 }: ItemCardProps): React.ReactElement => {
   return (
     <article className={styles["item-card"]}>
@@ -18,6 +20,7 @@ const ItemCard = ({
         width={350}
         height={350}
         className={styles["item-card__image"]}
+        loading={isLazy}
       />
       <h2 className={styles["item-card__name"]}>{name || title}</h2>
     </article>
