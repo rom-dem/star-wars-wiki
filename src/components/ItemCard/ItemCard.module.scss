@@ -2,7 +2,7 @@
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   border-radius: 20px;
   width: 350px;
-  height: 470px;
+  height: 430px;
   background-color: #fff;
 
   &__image {
@@ -11,14 +11,24 @@
   }
 
   &__name {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
-    font-size: 2.3rem;
+    font-size: 1.5rem;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     line-height: 2;
+  }
+}
+
+@media (max-width: 400px) {
+  .item-card {
+    width: 300px;
+
+    &__image {
+      width: 300px;
+    }
   }
 }

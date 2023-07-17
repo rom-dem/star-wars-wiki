@@ -34,3 +34,23 @@ $color-dark: #2e282a;
     color: $color-accent;
   }
 }
+
+@media (max-width: 980px) {
+  .menu {
+    position: relative;
+    min-height: auto;
+    width: 100vw;
+
+    &__list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__button {
+      padding: 10px 7px;
+      font-size: 1.5rem;
+      width: auto;
+    }
+  }
+}

@@ -8,8 +8,13 @@ $color-gray: #e1e9e3;
   box-sizing: border-box;
 }
 
+html {
+  background-color: $color-gray;
+}
+
 body {
   margin: 0;
+  padding: 0;
 }
 
 ul,
