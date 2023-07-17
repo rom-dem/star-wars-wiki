@@ -1,17 +1,22 @@
-$padding: 20px;
+$color-gray: #e1e9e3;
 
 .container {
   display: flex;
   align-items: flex-start;
   min-height: 100vh;
+  background-color: $color-gray;
 }
 
 .main {
-  padding: $padding;
+  padding: 20px;
 }
 
 .loader {
+  display: flex;
+  align-items: flex-start;
+  min-height: 100vh;
   text-align: center;
   align-items: center;
   justify-content: center;
+  background-color: #fff;
 }

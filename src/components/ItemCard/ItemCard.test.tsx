@@ -1,6 +1,5 @@
-import { screen } from "@testing-library/dom";
 import { createRoot } from "react-dom/client";
-import { act } from "@testing-library/react";
+import { act, screen } from "@testing-library/react";
 import ItemCard from "./ItemCard";
 import { mockLuke } from "@/mocks/itemsMocks";
 import { createTestContainer } from "@/utils/testUtils/testUtils";

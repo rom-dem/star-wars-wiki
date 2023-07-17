@@ -1,7 +1,8 @@
-$accentColor: #ffe81f;
+$color-accent: #ffd95b;
+$color-dark: #2e282a;
 
 .menu {
-  background-color: black;
+  background-color: $color-dark;
   min-height: 100vh;
   position: sticky;
   top: 0;
@@ -23,13 +24,13 @@ $accentColor: #ffe81f;
     text-shadow:
       0 0 7px #fff,
       0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 42px #f09;
-    border: 1px solid black;
+      0 0 21px $color-accent;
+
+    border: 1px solid $color-dark;
   }
 
   &__button:active {
-    border: 1px solid $accentColor;
-    color: $accentColor;
+    border: 1px solid $color-accent;
+    color: $color-accent;
   }
 }
