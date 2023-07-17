@@ -19,6 +19,7 @@ const Pagination = ({
         className={styles["pagination__button"]}
         onClick={paginationPrevious}
         disabled={isPreviousDisabled}
+        name="previous"
       >
         Previous Page
       </button>
@@ -26,6 +27,7 @@ const Pagination = ({
         className={styles["pagination__button"]}
         onClick={paginationNext}
         disabled={isNextDisabled}
+        name="next"
       >
         Next Page
       </button>
