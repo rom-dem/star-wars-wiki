@@ -36,9 +36,7 @@ const Home = () => {
 
   if (isLoading) {
     return (
-      <div
-        className={`${styles.container} ${montserrat.className} ${styles.loader}`}
-      >
+      <div className={`${montserrat.className} ${styles.loader}`}>
         <h2 className={`${styles.main} `}>Loading...</h2>
       </div>
     );
