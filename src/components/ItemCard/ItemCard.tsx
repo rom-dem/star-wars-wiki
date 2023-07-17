@@ -1,7 +1,6 @@
 import { ItemStructure } from "@/api/types";
 import styles from "@/components/ItemCard/ItemCard.module.scss";
 import Image from "next/image";
-import cardImage from "../../../public/characters.webp";
 import getCategoryImage from "@/utils/getCategoryImage/getCategoryImage";
 
 interface ItemCardProps {
