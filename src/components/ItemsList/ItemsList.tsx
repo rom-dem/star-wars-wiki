@@ -11,9 +11,9 @@ export const ItemsList = ({
 }: ItemsListProps): React.ReactElement => {
   return (
     <ul className={styles["items-list"]}>
-      {results.map((item) => (
+      {results.map((item, index) => (
         <li key={item.url} className="items-list__item item">
-          <ItemCard item={item} />
+          <ItemCard item={item} isLazy={index < 2 ? "eager" : "lazy"} />
         </li>
       ))}
     </ul>

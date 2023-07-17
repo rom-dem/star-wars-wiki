@@ -8,6 +8,7 @@ import useApi from "@/hooks/useApi";
 import { useState } from "react";
 import { initialStateValues } from "@/utils/dataUtils/dataUtils";
 import Pagination from "@/components/Pagination/Pagination";
+import { Loader } from "@/components/Loader/Loader";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const Home = () => {
@@ -23,7 +24,6 @@ const Home = () => {
   };
 
   const isPreviousDisabled = !data?.previous;
-
   const isNextDisabled = !data?.next;
 
   const handlePreviousPageOnClick = () => {
@@ -33,14 +33,6 @@ const Home = () => {
   const handleNextPageOnClick = () => {
     setSelectedPage(selectedPage + 1);
   };
-
-  if (isLoading) {
-    return (
-      <div className={`${montserrat.className} ${styles.loader}`}>
-        <h2 className={`${styles.main} `}>Loading...</h2>
-      </div>
-    );
-  }
 
   return (
     <>
@@ -60,13 +52,20 @@ const Home = () => {
           onClick={handleCategoryOnClick}
         />
         <main className={`${styles.main}`}>
-          <ItemsList items={data!} />
-          <Pagination
-            isNextDisabled={isNextDisabled}
-            isPreviousDisabled={isPreviousDisabled}
-            paginationNext={handleNextPageOnClick}
-            paginationPrevious={handlePreviousPageOnClick}
-          />
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <>
+              {" "}
+              <ItemsList items={data!} />
+              <Pagination
+                isNextDisabled={isNextDisabled}
+                isPreviousDisabled={isPreviousDisabled}
+                paginationNext={handleNextPageOnClick}
+                paginationPrevious={handlePreviousPageOnClick}
+              />
+            </>
+          )}
         </main>
       </div>
     </>
