@@ -20,8 +20,16 @@ Testing coverage:
 npm run test:coverage
 ```
 
+E2E test:
+
+```bash
+npm run cypress:open
+```
+
 ## Visit the web application
 
 Check out the [Stars Wars Wiki](https://starwarswikird.vercel.app/) on Vercel.
 
-![Web Screenshot](public/starWarsWikiScreenshot.webp)
+![Desktop Screenshot](public/desktop-screenshot.webp)
+![Phone Screenshot](public/phone-screenshot.webp)
+![Tablet Screenshot](public/tablet-screenshot.webp)
