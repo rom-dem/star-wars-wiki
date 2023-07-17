@@ -1,4 +1,4 @@
-$padding: 1rem;
+$padding: 20px;
 
 .container {
   display: flex;
@@ -8,4 +8,10 @@ $padding: 1rem;
 
 .main {
   padding: $padding;
+}
+
+.loader {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
