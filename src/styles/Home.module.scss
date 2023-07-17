@@ -8,10 +8,15 @@ $color-gray: #e1e9e3;
 
 .main {
   padding: 20px;
+  min-width: 80vw;
 }
 
 @media (max-width: 980px) {
   .container {
     flex-direction: column;
+  }
+
+  .main {
+    min-width: 100vw;
   }
 }
