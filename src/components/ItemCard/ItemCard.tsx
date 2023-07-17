@@ -17,7 +17,7 @@ const ItemCard = ({
   return (
     <article className={styles["item-card"]}>
       <Image
-        src={`/../public/${getCategoryImage(selectedCategory)}.webp`}
+        src={`/${getCategoryImage(selectedCategory)}.webp`}
         alt={`${name || title}`}
         width={350}
         height={350}
