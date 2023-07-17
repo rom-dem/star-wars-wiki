@@ -30,7 +30,11 @@ const Home = () => {
     <>
       <Head>
         <title>Star Wars Wiki</title>
-        <meta name="Characters and items from Star Wars universe" />
+        <meta
+          name="description"
+          content="Characters and items from Star Wars universe"
+          key="desc"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
