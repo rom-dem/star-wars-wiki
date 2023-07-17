@@ -11,7 +11,10 @@ describe("Given the CatogoriesMenu component", () => {
 
       act(() => {
         createRoot(container).render(
-          <CategoriesMenu categories={apiCategories} />,
+          <CategoriesMenu
+            categories={apiCategories}
+            onClick={() => "people"}
+          />,
         );
       });
       const expectedButtonText = screen.getByRole("button", {
