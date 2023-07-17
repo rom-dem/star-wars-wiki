@@ -56,8 +56,7 @@ const Home = () => {
             <Loader />
           ) : (
             <>
-              {" "}
-              <ItemsList items={data!} />
+              <ItemsList items={data!} selectedCategory={selectedCategory} />
               <Pagination
                 isNextDisabled={isNextDisabled}
                 isPreviousDisabled={isPreviousDisabled}
