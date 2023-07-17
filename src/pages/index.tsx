@@ -7,6 +7,7 @@ import { apiCategories } from "@/api/apiClient/apiEndpoints";
 import useApi from "@/hooks/useApi";
 import { useState } from "react";
 import { initialStateValues } from "@/utils/dataUtils/dataUtils";
+import Pagination from "@/components/Pagination/Pagination";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const Home = () => {
@@ -62,20 +63,12 @@ const Home = () => {
         />
         <main className={`${styles.main}`}>
           <ItemsList items={data!} />
-          <button
-            className="pagination"
-            onClick={handlePreviousPageOnClick}
-            disabled={isPreviousDisabled}
-          >
-            Previous Page
-          </button>
-          <button
-            className="pagination"
-            onClick={handleNextPageOnClick}
-            disabled={isNextDisabled}
-          >
-            Next Page
-          </button>
+          <Pagination
+            isNextDisabled={isNextDisabled}
+            isPreviousDisabled={isPreviousDisabled}
+            paginationNext={handleNextPageOnClick}
+            paginationPrevious={handlePreviousPageOnClick}
+          />
         </main>
       </div>
     </>
