@@ -1,6 +1,7 @@
 import { ItemStructure } from "@/api/types";
 import styles from "@/components/ItemCard/ItemCard.module.scss";
 import Image from "next/image";
+import cardImage from "../../../public/characters.webp";
 
 interface ItemCardProps {
   item: ItemStructure;
@@ -10,7 +11,7 @@ const ItemCard = ({ item: { name } }: ItemCardProps): React.ReactElement => {
   return (
     <article className={styles["item-card"]}>
       <Image
-        src="/../public/characters.webp"
+        src={cardImage}
         alt={name}
         width={350}
         height={350}

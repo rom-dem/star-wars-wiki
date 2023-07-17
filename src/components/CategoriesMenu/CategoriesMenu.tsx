@@ -1,6 +1,5 @@
 import { ApiCategoriesStructure } from "@/api/types";
 import styles from "@/components/CategoriesMenu/CategoriesMenu.module.scss";
-import { useState } from "react";
 
 interface ButtonProps {
   categories: ApiCategoriesStructure;

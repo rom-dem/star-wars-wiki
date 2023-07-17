@@ -3,6 +3,8 @@ $accentColor: #ffe81f;
 .menu {
   background-color: black;
   min-height: 100vh;
+  position: sticky;
+  top: 0;
 
   &__list {
     padding: 10px;
