@@ -8,6 +8,7 @@ export interface ApiCategoriesStructure {
 }
 
 export interface ApiData {
+  previous?: string;
   next: string;
   results: ItemStructure[];
 }

@@ -14,7 +14,7 @@ const ItemCard = ({
     <article className={styles["item-card"]}>
       <Image
         src={cardImage}
-        alt={name}
+        alt={`${name || title}`}
         width={350}
         height={350}
         className={styles["item-card__image"]}

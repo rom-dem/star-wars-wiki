@@ -6,14 +6,31 @@ import { ItemsList } from "@/components/ItemsList/ItemsList";
 import { apiCategories } from "@/api/apiClient/apiEndpoints";
 import useApi from "@/hooks/useApi";
 import { useState } from "react";
+import { initialStateValues } from "@/utils/dataUtils/dataUtils";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const Home = () => {
-  const [selectedCategory, setSelectedCategory] = useState("people");
-  const { data, isLoading } = useApi(selectedCategory);
+  const [selectedCategory, setSelectedCategory] = useState(
+    initialStateValues.category,
+  );
+  let [selectedPage, setSelectedPage] = useState(initialStateValues.page);
+  const { data, isLoading } = useApi(selectedCategory, selectedPage);
 
-  const handleOnClick = (selectedCategory: string) => {
+  const handleCategoryOnClick = (selectedCategory: string) => {
+    setSelectedPage(initialStateValues.page);
     setSelectedCategory(selectedCategory);
+  };
+
+  const isPreviousDisabled = !data?.previous;
+
+  const isNextDisabled = !data?.next;
+
+  const handlePreviousPageOnClick = () => {
+    setSelectedPage(selectedPage - 1);
+  };
+
+  const handleNextPageOnClick = () => {
+    setSelectedPage(selectedPage + 1);
   };
 
   if (isLoading) {
@@ -30,14 +47,35 @@ const Home = () => {
     <>
       <Head>
         <title>Star Wars Wiki</title>
-        <meta name="Characters and items from Star Wars universe" />
+        <meta
+          name="description"
+          content="Characters and items from Star Wars universe"
+          key="desc"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={`${styles.container} ${montserrat.className}`}>
-        <CategoriesMenu categories={apiCategories} onClick={handleOnClick} />
+        <CategoriesMenu
+          categories={apiCategories}
+          onClick={handleCategoryOnClick}
+        />
         <main className={`${styles.main}`}>
           <ItemsList items={data!} />
+          <button
+            className="pagination"
+            onClick={handlePreviousPageOnClick}
+            disabled={isPreviousDisabled}
+          >
+            Previous Page
+          </button>
+          <button
+            className="pagination"
+            onClick={handleNextPageOnClick}
+            disabled={isNextDisabled}
+          >
+            Next Page
+          </button>
         </main>
       </div>
     </>
