@@ -2,20 +2,23 @@ import { ItemStructure } from "@/api/types";
 import styles from "@/components/ItemCard/ItemCard.module.scss";
 import Image from "next/image";
 import cardImage from "../../../public/characters.webp";
+import getCategoryImage from "@/utils/getCategoryImage/getCategoryImage";
 
 interface ItemCardProps {
   item: ItemStructure;
   isLazy: "lazy" | "eager";
+  selectedCategory: string;
 }
 
 const ItemCard = ({
   item: { name, title },
   isLazy,
+  selectedCategory,
 }: ItemCardProps): React.ReactElement => {
   return (
     <article className={styles["item-card"]}>
       <Image
-        src={cardImage}
+        src={`/../public/${getCategoryImage(selectedCategory)}.webp`}
         alt={`${name || title}`}
         width={350}
         height={350}
