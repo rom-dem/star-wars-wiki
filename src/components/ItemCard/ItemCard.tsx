@@ -7,7 +7,9 @@ interface ItemCardProps {
   item: ItemStructure;
 }
 
-const ItemCard = ({ item: { name } }: ItemCardProps): React.ReactElement => {
+const ItemCard = ({
+  item: { name, title },
+}: ItemCardProps): React.ReactElement => {
   return (
     <article className={styles["item-card"]}>
       <Image
@@ -17,7 +19,7 @@ const ItemCard = ({ item: { name } }: ItemCardProps): React.ReactElement => {
         height={350}
         className={styles["item-card__image"]}
       />
-      <h2 className={styles["item-card__name"]}>{name}</h2>
+      <h2 className={styles["item-card__name"]}>{name || title}</h2>
     </article>
   );
 };

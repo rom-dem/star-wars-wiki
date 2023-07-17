@@ -15,4 +15,5 @@ export interface ApiData {
 export interface ItemStructure {
   name: string;
   url: string;
+  title?: string;
 }
